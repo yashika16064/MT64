@@ -15,8 +15,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColorHighlight="#4CAF50"
         android:textColor="#4CAF50"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
@@ -25,23 +26,22 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.15"
+        android:layout_weight="0.13"
         android:weightSum="1"
         android:layout_gravity="center_horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="YES"
-            android:onClick="onYes"
+
+            android:layout_weight="0.08"
             android:id="@+id/yesButton" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NO"
-            android:onClick="onNo"
             android:id="@+id/noButton"
             android:layout_weight="0.08" />
     </LinearLayout>
@@ -50,7 +50,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NEXT"
-        android:onClick="generate"
         android:id="@+id/nextButton"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

@@ -18,6 +18,9 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private int number;
     public TextView textView;
+    public Button yesButton;
+    public Button noButton;
+    public Button nextButton;
     public String ps;
     public int count=0 ;
     /**
@@ -30,9 +33,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textView = (TextView) findViewById(R.id.textView);
+        final TextView textView = (TextView) findViewById(R.id.textView);
         if(count==0){
         generate(textView);count++;}
+
+        yesButton = (Button) findViewById(R.id.yesButton);
+        yesButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                onYes(textView);
+            }
+        });
+
+        noButton = (Button) findViewById(R.id.noButton);
+        noButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                onNo(textView);
+            }
+        });
+
+        nextButton = (Button) findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                generate(textView);
+            }
+        });
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
